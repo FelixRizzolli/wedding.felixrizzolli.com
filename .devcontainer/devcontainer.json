@@ -24,7 +24,8 @@
         "wix.vscode-import-cost",
         "gruntfuggly.todo-tree",
         "aaron-bond.better-comments",
-        "usernamehw.errorlens"
+        "usernamehw.errorlens",
+        "nuxtr.nuxt-vscode-extentions"
       ],
       "settings": {
         "files.autoSave": "afterDelay",
