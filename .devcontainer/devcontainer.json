@@ -1,0 +1,39 @@
+{
+  "name": "Dev Container",
+  "dockerComposeFile": "./compose.yml",
+  "service": "devcontainer",
+  "shutdownAction": "none",
+
+  "remoteUser": "root",
+  "workspaceFolder": "/workspace",
+
+  "forwardPorts": [3000, 27017],
+
+  "postStartCommand": "chmod +x /root/setup.sh && bash /root/setup.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "cweijan.vscode-database-client2",
+        "cweijan.dbclient-jdbc",
+        "eamodio.gitlens",
+        "graphql.vscode-graphql",
+        "graphql.vscode-graphql-syntax",
+        "formulahendry.auto-rename-tag",
+        "wix.vscode-import-cost",
+        "gruntfuggly.todo-tree",
+        "aaron-bond.better-comments",
+        "usernamehw.errorlens"
+      ],
+      "settings": {
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "prettier.configPath": "/workspace/strapi/.prettierrc",
+        "prettier.ignorePath": "/workspace/strapi/.prettierignore"
+      }
+    }
+  }
+}
