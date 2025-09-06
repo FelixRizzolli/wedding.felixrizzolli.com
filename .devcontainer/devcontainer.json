@@ -25,7 +25,8 @@
                 "gruntfuggly.todo-tree",
                 "aaron-bond.better-comments",
                 "usernamehw.errorlens",
-                "nuxtr.nuxt-vscode-extentions"
+                "nuxtr.nuxt-vscode-extentions",
+                "mongodb.mongodb-vscode"
             ],
             "settings": {
                 "files.autoSave": "afterDelay",
