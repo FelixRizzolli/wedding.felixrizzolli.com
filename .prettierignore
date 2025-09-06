@@ -1,0 +1,19 @@
+# vscode
+.vscode/settings.json
+
+# data & binary files
+public
+
+# builds
+coverage
+.output
+.nuxt
+dist
+
+# pnpm
+.pnpm-store
+.pnpm-lock.yaml
+
+# node
+node_modules
+node-compile-cache

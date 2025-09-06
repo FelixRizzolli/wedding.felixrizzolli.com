@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-white dark:bg-gray-900">
-    <Header />
-    <main>
-      <Hero />
-    </main>
-  </div>
+    <div class="bg-white dark:bg-gray-900">
+        <Header />
+        <main>
+            <Hero />
+        </main>
+    </div>
 </template>
