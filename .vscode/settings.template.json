@@ -1,0 +1,15 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.configPath": "/workspace/strapi/.prettierrc",
+    "prettier.ignorePath": "/workspace/strapi/.prettierignore",
+    "mdb.connectionSaving.defaultConnectionSavingLocation": "Workspace",
+    "mdb.presetConnections": [
+        {
+            "name": "wedding-db",
+            "connectionString": "$MONGODB_CONNECTION_STRING"
+        }
+    ]
+}
