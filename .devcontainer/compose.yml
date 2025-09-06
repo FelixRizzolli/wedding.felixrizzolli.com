@@ -28,7 +28,7 @@ services:
         command: ['sleep', 'infinity']
 
     database:
-        image: mongo:6.0
+        image: mongo:8.0
         restart: always
         environment:
             MONGO_INITDB_DATABASE: ${DATABASE_NAME}
