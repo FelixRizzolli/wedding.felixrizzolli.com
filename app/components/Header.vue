@@ -3,10 +3,9 @@
     <header class="absolute inset-x-0 top-0 z-50">
       <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
+          <a href="#" class="-m-1.5">
             <span class="sr-only" v-html="title"></span>
-            <img class="h-8 w-auto dark:hidden" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-            <img class="h-8 w-auto not-dark:hidden" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="" />
+              <i-logo class="h-12 w-12" />
           </a>
         </div>
         <div class="flex lg:hidden">
@@ -27,9 +26,8 @@
         <DialogPanel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900 dark:sm:ring-gray-100/10">
           <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img class="h-8 w-auto dark:hidden" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-              <img class="h-8 w-auto not-dark:hidden" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="" />
+              <span class="sr-only" v-html="title"></span>
+              <i-logo class="h-12 w-12" />
             </a>
             <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-200" @click="mobileMenuOpen = false">
               <span class="sr-only">Close menu</span>
@@ -68,3 +66,19 @@ const navigation = [
 
 const mobileMenuOpen = ref(false)
 </script>
+
+<style scoped>
+/* ensure the icon web component/svg fills the Tailwind height utility on the host */
+:deep(i-logo) {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+/* target inner svg rendered by the component */
+:deep(i-logo) :deep(svg) {
+  display: block;
+  height: 100% !important;
+  width: auto !important;
+}
+</style>
