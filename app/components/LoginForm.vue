@@ -1,23 +1,36 @@
 <template>
-  <div class="max-w-sm mx-auto bg-white dark:bg-gray-800 rounded shadow p-6 space-y-4">
-    <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Login</h2>
-    <form @submit.prevent="submitLogin" class="space-y-3">
-      <div>
-        <label class="block text-sm font-medium mb-1" for="username">Username</label>
-        <input id="username" v-model="username" type="text" required class="w-full rounded border-gray-300 dark:border-gray-600 dark:bg-gray-700" />
-      </div>
-      <div>
-        <label class="block text-sm font-medium mb-1" for="password">Password</label>
-        <input id="password" v-model="password" type="password" required class="w-full rounded border-gray-300 dark:border-gray-600 dark:bg-gray-700" />
-      </div>
-      <div class="flex items-center gap-2">
-        <button type="submit" class="btn btn-primary px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-50" :disabled="loading">Login</button>
-        <button type="button" @click="submitRegister" class="px-4 py-2 bg-gray-200 dark:bg-gray-600 rounded" :disabled="loading">Register</button>
-      </div>
-      <p v-if="error" class="text-sm text-red-600">{{ error }}</p>
-    </form>
+  <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+      <i-logo class="h-12 w-12 mx-auto" />
+      <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900 dark:text-white">Sign in to your account</h2>
+    </div>
+
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <form class="space-y-6" @submit.prevent="submitLogin">
+        <div>
+          <label for="email" class="block text-sm/6 font-medium text-gray-900 dark:text-gray-100">Username</label>
+          <div class="mt-2">
+            <input type="email" name="username" id="username" v-model="username" autocomplete="username" required="" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500" />
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="password" class="block text-sm/6 font-medium text-gray-900 dark:text-gray-100">Password</label>
+          </div>
+          <div class="mt-2">
+            <input type="password" name="password" id="password" v-model="password" autocomplete="current-password" required="" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500" />
+          </div>
+        </div>
+
+        <div>
+          <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500">Sign in</button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
+
 <script setup lang="ts">
 const username = ref('');
 const password = ref('');
