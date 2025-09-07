@@ -8,10 +8,10 @@ export default defineNuxtConfig({
     i18n: {
         defaultLocale: 'de',
         locales: [
-            { code: 'de', name: 'Deutsch', file: 'de.json'},
-            { code: 'it', name: 'Italiano', file: 'de.json'},
-            { code: 'en', name: 'English', file: 'de.json'},
-        ]
+            { code: 'de', name: 'Deutsch', file: 'de.json' },
+            { code: 'it', name: 'Italiano', file: 'de.json' },
+            { code: 'en', name: 'English', file: 'de.json' },
+        ],
     },
 
     svgo: {

@@ -3,18 +3,16 @@
         <Header />
         <main class="flex-1">
             <Hero />
-            <div v-if="loggedIn" class="gallery p-8">
-                This is my Gallery!
-            </div>
+            <div v-if="loggedIn" class="gallery p-8">This is my Gallery!</div>
         </main>
-        <Modal :show="showLogin" @update:show="(v)=>showLogin=v">
-            <LoginForm isModal @success="showLogin=false" />
+        <Modal :show="showLogin" @update:show="(v) => (showLogin = v)">
+            <LoginForm isModal @success="showLogin = false" />
         </Modal>
         <Footer />
     </div>
 </template>
 
 <script setup lang="ts">
-const { loggedIn } = useUserSession();
-const { showLogin } = useLoginModal();
+    const { loggedIn } = useUserSession();
+    const { showLogin } = useLoginModal();
 </script>
