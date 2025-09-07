@@ -3,7 +3,7 @@
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
                 <a href="#" class="-m-1.5">
-                    <span class="sr-only" v-html="title"></span>
+                    <span class="sr-only">{{ t('title') }}</span>
                     <i-logo class="h-12 w-12" />
                 </a>
             </div>
@@ -13,7 +13,7 @@
                     class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-200"
                     @click="mobileMenuOpen = true"
                 >
-                    <span class="sr-only">Open main menu</span>
+                    <span class="sr-only">{{ t('menu.open') }}</span>
                     <Bars3Icon class="size-6" aria-hidden="true" />
                 </button>
             </div>
@@ -23,12 +23,13 @@
                     :key="item.name"
                     :href="item.href"
                     class="text-sm/6 font-semibold text-gray-900 dark:text-white"
-                    >{{ item.name }}</a
-                >
+                    >
+                    {{ item.name }}
+                </a>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                 <button type="button" @click="console.log('test'); openLoginModal()" class="text-sm/6 font-semibold text-gray-900 dark:text-white">
-                    Log in <span aria-hidden="true">&rarr;</span>
+                    {{ t('button.login') }} <span aria-hidden="true">&rarr;</span>
                 </button>
             </div>
         </nav>
@@ -39,7 +40,7 @@
             >
                 <div class="flex items-center justify-between">
                     <a href="#" class="-m-1.5 p-1.5">
-                        <span class="sr-only" v-html="title"></span>
+                        <span class="sr-only">{{ t('title') }}</span>
                         <i-logo class="h-12 w-12" />
                     </a>
                     <button
@@ -47,7 +48,7 @@
                         class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-200"
                         @click="mobileMenuOpen = false"
                     >
-                        <span class="sr-only">Close menu</span>
+                        <span class="sr-only">{{ t('menu.close') }}</span>
                         <XMarkIcon class="size-6" aria-hidden="true" />
                     </button>
                 </div>
@@ -64,7 +65,7 @@
                         </div>
                         <div class="py-6">
                             <button type="button" @click="openLoginModal()" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">
-                                Log in
+                                {{ t('button.login') }}
                             </button>
                         </div>
                     </div>
@@ -75,19 +76,19 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue';
     import { Dialog, DialogPanel } from '@headlessui/vue';
     import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 
-    const title = ref('Elisabeth & Felix');
+    const { t } = useI18n();
 
-    const navigation = [
-        { name: 'Preparation', href: '#' },
-        { name: 'Church', href: '#' },
-        { name: 'Aperitif', href: '#' },
-        { name: 'Patscheider Hof', href: '#' },
-        { name: 'Party', href: '#' },
-    ];
+    // navigation is computed so it updates when the locale changes
+    const navigation = computed(() => [
+        { name: t('category.preparation'), href: '#' },
+        { name: t('category.church'), href: '#' },
+        { name: t('category.aperitif'), href: '#' },
+        { name: t('category.patscheider'), href: '#' },
+        { name: t('category.party'), href: '#' },
+    ]);
 
     const mobileMenuOpen = ref(false);
 

@@ -7,13 +7,15 @@
           <component :is="item.icon" class="size-6" aria-hidden="true" />
         </a>
       </div>
-      <p class="mt-8 text-center text-sm/6 text-gray-600 md:order-1 md:mt-0 dark:text-gray-400">&copy; 2025 Elisabeth &amp; Felix</p>
+      <p class="mt-8 text-center text-sm/6 text-gray-600 md:order-1 md:mt-0 dark:text-gray-400">&copy; 2025 {{ t('title') }}</p>
     </div>
   </footer>
 </template>
 
 <script setup>
 import { defineComponent, h } from 'vue'
+
+const { t } = useI18n();
 
 const navigation = [
   {

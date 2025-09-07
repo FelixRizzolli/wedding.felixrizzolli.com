@@ -1,0 +1,27 @@
+{
+    "title": "Elisabeth & Felix",
+    "text": "",
+    "button": {
+        "login": "Anmelden",
+        "gallery": "Gallerie",
+        "images": "Meine Bilder"
+    },
+    "category": {
+        "preparation": "Vorbereitung",
+        "church": "Kirche",
+        "aperitif": "Aperitif",
+        "patscheider": "Patscheider Hof",
+        "party": "Party"
+    },
+    "form": {
+        "login": {
+            "title": "Melde dich in deinem Konto an"
+        },
+        "username": "Benutzername",
+        "password": "Passwort"
+    },
+    "menu": {
+        "open": "Hauptmenü öffnen",
+        "close": "Menü schließen"
+    }
+}

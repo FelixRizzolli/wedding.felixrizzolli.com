@@ -1,0 +1,27 @@
+{
+    "title": "Elisabeth & Felix",
+    "text": "",
+    "button": {
+        "login": "Accedi",
+        "gallery": "Galleria",
+        "images": "Le mie immagini"
+    },
+    "category": {
+        "preparation": "Preparazione",
+        "church": "Chiesa",
+        "aperitif": "Aperitivo",
+        "patscheider": "Patscheider Hof",
+        "party": "Festa"
+    },
+    "form": {
+        "login": {
+            "title": "Accedi al tuo account"
+        },
+        "username": "Nome utente",
+        "password": "Password"
+    },
+    "menu": {
+        "open": "Apri il menu principale",
+        "close": "Chiudi il menu"
+    }
+}

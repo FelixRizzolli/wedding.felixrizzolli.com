@@ -32,23 +32,15 @@
             <div class="mx-auto max-w-7xl px-6 pt-36 pb-32 sm:pt-60 lg:px-8 lg:pt-32">
                 <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                     <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
-                        <h1
-                            class="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl dark:text-white"
-                            v-html="title"
-                        ></h1>
-                        <p
-                            class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none dark:text-gray-400"
-                            v-html="text"
-                        ></p>
+                        <h1 class="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl dark:text-white">{{ t('title') }}</h1>
+                        <p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none dark:text-gray-400">{{ t('text') }}</p>
                         <div class="mt-10 flex items-center gap-x-6">
-                            <a
-                                href="#"
-                                class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500"
-                                >{{ galleryButtonText }}</a
-                            >
-                            <a href="#" class="text-sm/6 font-semibold text-gray-900 dark:text-white"
-                                >{{ myButtonText }} <span aria-hidden="true">→</span></a
-                            >
+                            <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500">
+                                {{ t('button.gallery') }}
+                            </a>
+                            <a href="#" class="text-sm/6 font-semibold text-gray-900 dark:text-white">
+                                {{ t('button.images') }} <span aria-hidden="true">→</span>
+                            </a>
                         </div>
                     </div>
                     <div class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
@@ -122,10 +114,7 @@
     import { Dialog, DialogPanel } from '@headlessui/vue';
     import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 
-    const title = ref('Elisabeth & Felix');
-    const text = ref('');
-    const galleryButtonText = ref('Gallery');
-    const myButtonText = ref('My Images');
+    const { t } = useI18n();
 
     const previewImages = ref([
         'https://wedding-cdn.felixrizzolli.com/Hochzeit-293.jpg',
@@ -135,14 +124,6 @@
         'https://wedding-cdn.felixrizzolli.com/Hochzeit-770.jpg',
         'https://wedding-cdn.felixrizzolli.com/Hochzeit-783.jpg',
     ]);
-
-    const navigation = [
-        { name: 'Preparation', href: '#' },
-        { name: 'Church', href: '#' },
-        { name: 'Aperitif', href: '#' },
-        { name: 'Patscheider Hof', href: '#' },
-        { name: 'Party', href: '#' },
-    ];
 
     const mobileMenuOpen = ref(false);
 </script>
