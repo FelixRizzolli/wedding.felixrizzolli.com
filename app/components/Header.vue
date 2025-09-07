@@ -27,9 +27,9 @@
                 >
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                <a href="#" class="text-sm/6 font-semibold text-gray-900 dark:text-white"
-                    >Log in <span aria-hidden="true">&rarr;</span></a
-                >
+                <button type="button" @click="console.log('test'); openLoginModal()" class="text-sm/6 font-semibold text-gray-900 dark:text-white">
+                    Log in <span aria-hidden="true">&rarr;</span>
+                </button>
             </div>
         </nav>
         <Dialog class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -63,11 +63,9 @@
                             >
                         </div>
                         <div class="py-6">
-                            <a
-                                href="#"
-                                class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5"
-                                >Log in</a
-                            >
+                            <button type="button" @click="openLoginModal()" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">
+                                Log in
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -92,6 +90,8 @@
     ];
 
     const mobileMenuOpen = ref(false);
+
+    const { openLoginModal } = useLoginModal();
 </script>
 
 <style scoped>
